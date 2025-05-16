@@ -1,0 +1,42 @@
+/* large view navigation */
+@media (min-width: 37.5em) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header p {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin: auto 0;
+    }
+
+    header nav {
+        flex-direction: row;
+    }
+
+    nav a {
+        display: flex;
+        flex-direction: row;
+        flex: 1 1 100%;
+    }
+
+    main div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+    }
+}
+
+@media (min-width: 57.5em) {
+    main div {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

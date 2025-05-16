@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #023436;
+    --secondary-color: #084b8e;
+    --accent-color-1: #F55D3E;
+    --accent-color-2: #59C3C3;
+    --h1-text-color: #EBEBEB;
+    --font: "Roboto", serif;
+}
+body {
+    font-family: var(--font);
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+header nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-decoration: none;
+    text-align: center;
+}
+header, footer {
+    background-color: var(--primary-color);
+    color: var(--h1-text-color);
+}
+nav a {
+    display: none;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--h1-text-color);
+}
+nav a:hover {
+    background-color: var(--accent-color-1);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+/* when the button is clicked - the open class is toggled (added/removed) */
+.open a {
+    display: block;
+}
+/**/
+#menu {
+    font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: var(--h1-text-color);
+    position: absolute;
+    right: 1em;
+    top: 0.6rem;
+}
+#menu::before {
+    content: '☰';
+}
+#menu.open::before {
+    content: "❌";
+}
+
+
+main {
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4em 0;
+}
+main h1, figure {
+    padding-bottom: 1.4em;
+}
+
+figure img {
+    max-width: 100%;
+}
