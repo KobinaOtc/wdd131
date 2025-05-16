@@ -78,3 +78,12 @@ main h1, figure {
 figure img {
     max-width: 100%;
 }
+
+footer {
+    padding: 1em 0;
+    text-align: center;
+}
+footer #last-modified {
+    font-size: 0.8rem;
+    color: var(--accent-color-2);
+}
