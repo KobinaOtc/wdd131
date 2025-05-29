@@ -1,0 +1,39 @@
+@media (min-width: 1000px) {
+    main {
+        position: relative;
+    }
+
+    h2 {
+        background-color: gold;
+        padding: 0 1em;
+        margin-left: -40px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 columns or more */
+    }
+
+    .card {
+        position: absolute;
+        max-width: 26em;
+    }
+
+    .hero {
+        height: 100vh;
+    }
+    .weather-icon-mobile {
+        display: none; /* Hide SVG on wider screens */
+    }
+
+    .weather-icon-desktop {
+        display: inline-block; /* Show emoji on wider screens */
+    }
+
+    .weather-card h2::after {
+        display: inline-block; /* Show pseudo-element for icon */
+        content: attr(data-weather-emoji); /* Use data attribute for emoji */
+        font-size: 2.5rem;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+}
