@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--TODO: Add Meta Data-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The country page for my WDD 131 - Dynamic Web Fundamentals projects by Kobina Othcere">
+    <meta name="author" content="Kobina Otchere">
+    <title>WDD 131 - Country Accra, Ghana</title>
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place-large.css">
+    <link rel="stylesheet" href="styles/place-medium.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Accra, Ghana</h1>
+    </header>
+
+    <main>
+        <section class="hero">
+            <picture>
+                <source media="(min-width: 1000px)" srcset="images/Accra-large.webp">
+                <source media="(min-width: 500px)" srcset="images/Accra-medium.webp">
+                <img src="images/Accra.webp" alt="Accra Cityscape" loading="lazy">
+            </picture>
+        </section>
+
+        <section class="cards">
+            <div class="card top">
+                <h2>About Accra</h2>
+                <p><strong>Area:</strong> <span>199.4 km²</span></p>
+                <p><strong>Population:</strong> <span>1,782,150</span></p>
+                <p><strong>Capital:</strong> Accra</p>
+                <p><strong>Currency:</strong> <span>Ghanaian Cedi</span></p>
+                <p><strong>Time Zone:</strong> <span>Greenwich Mean Time (GMT)</span></p>
+                <p><strong>Calling Code:</strong> <span>+233</span></p>
+            </div>
+
+            <div class="card weather-card bottom">
+                <h2>Weather <span class="weather-icon-desktop">⛅</span></h2>
+                <div class="weather-icon-mobile">
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 6c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                        <path d="M12 4.5c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5z" fill="none"/>
+                    </svg>
+                </div>
+                <p><strong>Temperature:</strong> <span id="temperature"></span> &deg;C (<span id="temperature-f">82.4</span> &deg;F)</p>
+                <p><strong>Wind Speed:</strong> <span id="wind-speed"></span> km/h (<span id="wind-speed-mph">9.3</span> mph)</p>
+                <p><strong>Conditions:</strong> Sunny</p>
+                <p><strong>Wind Chill:</strong> <span id="windchill"></span>&deg;F</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Accra, Ghana</p>
+        <p>Last Modified: <span id="lastmodified"></span></p>
+    </footer>
+
+    <script src="js/place.js" defer></script>
+</body>
+</html>
