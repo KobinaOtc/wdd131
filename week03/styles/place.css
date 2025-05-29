@@ -43,10 +43,6 @@ header h1 {
     color: var(--light-text-color);
 }
 
-main {
-    max-width: 1200px;
-}
-
 /* Hero Section Styling */
 .hero {
     width: 100%;
