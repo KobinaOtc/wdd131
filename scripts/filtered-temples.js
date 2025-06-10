@@ -57,28 +57,67 @@ const temples = [
       imageUrl:
       "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-    // Add more temple objects here...
+    {
+      templeName: "Bangkok Thailand",
+      location: "Bangkok, Thailand",
+      dedicated: "2019, 26 January",
+      area: 48525,
+      imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/bangkok-thailand-temple/bangkok-thailand-temple-40037-main.jpg"
+    },
+    {
+      templeName: "San Salvador El Salvador",
+      location: "San Salvador, El Salvador",
+      dedicated: "2011, 21 August",
+      area: 27986,
+      imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/_temp/135-San-Salvador-El-Salvador-Temple.jpg"
+    },
+    {
+      templeName: "Helsinki Finland",
+      location: "Helsinki, Finland",
+      dedicated: "2006, 22 October",
+      area: 16350,
+      imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/helsinki-finland-temple/helsinki-finland-temple-22169-main.jpg"
+    },
+    {
+      templeName: "Montreal Quebec",
+      location: "Montreal, Quebec, Canada",
+      dedicated: "2015, 22 November",
+      area: 11550,
+      imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/montreal-quebec-temple/montreal-quebec-temple-10671-main.jpg"
+    },
+    {
+      templeName: "Caracas Venezuela",
+      location: "Caracas, Venezuela",
+      dedicated: "2000, 20 August",
+      area: 15332,
+      imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/_temp/096-Caracas-Venezuela-Temple.jpg"
+    },
   ];
   
-  // Get the temple list container (we'll update its ID in HTML)
-  const templeListElement = document.getElementById('temple-list'); // Changed from product-list
+  // Get the temple list container 
+  const templeListElement = document.getElementById('temple-list');
   
   function displayTemples(templesToDisplay) { // Renamed function
-      templeListElement.innerHTML = ''; // Clear previous temples
-  
-      templesToDisplay.forEach(temple => { // Iterate over temple objects
-          const templeCard = document.createElement('div');
-          templeCard.classList.add('temple-card'); // Changed class name
-  
-          templeCard.innerHTML = `
-              <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
-              <h3>${temple.templeName}</h3>
-              <p>Location: ${temple.location}</p>
-              <p>Dedicated: ${temple.dedicated}</p>
-              <p>Area: ${temple.area.toLocaleString()} sq ft</p>
-          `;
-          templeListElement.appendChild(templeCard);
-      });
+    templeListElement.innerHTML = ''; // Clear previous temples
+
+    templesToDisplay.forEach(temple => { // Iterate over temple objects
+        const templeCard = document.createElement('div');
+        templeCard.classList.add('temple-card'); // Changed class name
+
+        templeCard.innerHTML = `
+            <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+            <h3>${temple.templeName}</h3>
+            <p>Location: ${temple.location}</p>
+            <p>Dedicated: ${temple.dedicated}</p>
+            <p>Area: ${temple.area.toLocaleString()} sq ft</p>
+        `;
+        templeListElement.appendChild(templeCard);
+    });
   }
 
 // --- Filtering Logic ---
@@ -95,19 +134,19 @@ allButton.addEventListener('click', () => {
 });
 
 oldButton.addEventListener('click', () => {
-    // Filter for temples dedicated before 1900
+    // Filter for temples dedicated before 2010
     const oldTemples = temples.filter(temple => {
         const year = parseInt(temple.dedicated.split(',')[0].trim()); // Extract year from "YYYY, Month, DD"
-        return year < 1900;
+        return year < 2010;
     });
     displayTemples(oldTemples);
 });
 
 newButton.addEventListener('click', () => {
-    // Filter for temples dedicated after 2000
+    // Filter for temples dedicated after 2010
     const newTemples = temples.filter(temple => {
         const year = parseInt(temple.dedicated.split(',')[0].trim()); // Extract year
-        return year > 2000;
+        return year > 2010;
     });
     displayTemples(newTemples);
 });

@@ -1,11 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 /* main.css */
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
     background-color: #f4f4f4;
     color: #333;
+}
+
+main {
+    padding: 0 3em;
 }
 
 header {
@@ -22,6 +30,7 @@ nav button {
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+    margin-top: 0.3em;
 }
 
 nav button:hover {
@@ -43,6 +52,7 @@ nav button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
     padding-bottom: 15px;
+    max-width: 25em;
 }
 
 .temple-card img { /* Changed class name */
@@ -93,5 +103,13 @@ footer {
     padding: 20px;
     background-color: #333;
     color: white;
-    border-radius: 8px;
+    /* border-radius: 8px; */
+}
+
+.foot-txt {
+    font-size: 20px;
+    padding-bottom: 8px;
+}
+#lastModified {
+    color: yellow;
 }
