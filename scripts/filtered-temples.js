@@ -134,19 +134,19 @@ allButton.addEventListener('click', () => {
 });
 
 oldButton.addEventListener('click', () => {
-    // Filter for temples dedicated before 2010
+    // Filter for temples dedicated before 1900
     const oldTemples = temples.filter(temple => {
         const year = parseInt(temple.dedicated.split(',')[0].trim()); // Extract year from "YYYY, Month, DD"
-        return year < 2010;
+        return year < 1900;
     });
     displayTemples(oldTemples);
 });
 
 newButton.addEventListener('click', () => {
-    // Filter for temples dedicated after 2010
+    // Filter for temples dedicated after 2000
     const newTemples = temples.filter(temple => {
         const year = parseInt(temple.dedicated.split(',')[0].trim()); // Extract year
-        return year > 2010;
+        return year > 2000;
     });
     displayTemples(newTemples);
 });
