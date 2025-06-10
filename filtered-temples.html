@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LDS Temple Listing</title> 
+    <title>LDS Temple Listing</title>
     <link rel="stylesheet" href="styles/filtered-temples.css">
     <script src="scripts/filtered-temples.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
 </head>
 <body>
     <header>
@@ -45,6 +46,8 @@
     </main>
 
     <footer>
-        <p class="foot-txt">©<span id="currentYear">2025</span> ⚡️ Kobina Adjoku Otchere ⚡️ Ghana</p>
+        <p class="foot-txt">©<span id="currentYear"></span> ⚡️ Kobina Adjoku Otchere ⚡️ Ghana</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>
