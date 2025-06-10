@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Confirmation</title>
+    <link rel="stylesheet" href="styles/forms.css"> </head>
+<body>
+    <header>
+        <h1>Thank You for Your Review!</h1>
+    </header>
+
+    <main>
+        <p>Your review has been successfully submitted.</p>
+        <p>You have submitted <span id="review-count">0</span> reviews so far.</p>
+        <p><a href="index.html">Submit another review</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear-review"></span> Product Reviews</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        let reviewCount = localStorage.getItem('numReviews');
+        const reviewCountSpan = document.getElementById('review-count');
+
+        if (reviewCountSpan) {
+            reviewCountSpan.textContent = reviewCount !== null ? reviewCount : '0';
+        }
+
+        const currentYearReviewSpan = document.getElementById('currentyear-review');
+        if (currentYearReviewSpan) {
+            currentYearReviewSpan.textContent = new Date().getFullYear();
+        }
+
+        // Update last modified date in footer
+        const lastModifiedSpan = document.getElementById('lastmodified-review'); // Assuming a different ID for review.html footer
+        if (lastModifiedSpan) {
+            lastModifiedSpan.textContent = document.lastModified;
+        }
+    });
+    </script>
+</body>
+</html>

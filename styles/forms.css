@@ -1,0 +1,280 @@
+/* General Body and Container Styling */
+body {
+    font-family: Arial, sans-serif; /* Adjusted to a common sans-serif font */
+    background-color: #361133; /* Dark purple background */
+    color: #fff; /* White text for header/footer */
+    margin: 0;
+    padding: 20px; /* Padding around the form container */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form horizontally */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    box-sizing: border-box; /* Include padding/border in element's total width/height */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px; /* Space between header and form */
+}
+
+h1 {
+    font-size: 2.5em; /* Larger heading */
+    color: #fff; /* White color for the main heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+main {
+    background-color: #ffffff; /* White background for the form container */
+    color: #333; /* Dark text color for content inside the form */
+    padding: 30px 40px; /* Generous padding inside the form box */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Max width for desktop forms */
+    box-sizing: border-box;
+}
+
+/* Form Fieldset and Legend Styling */
+fieldset {
+    border: 1px solid #ddd; /* Light border for fieldsets */
+    border-radius: 8px; /* Rounded corners for fieldsets */
+    padding: 20px;
+    margin-bottom: 25px; /* Space between fieldsets */
+    background-color: #fcfcfc; /* Slightly off-white background for fieldsets */
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6a1b9a; /* Purple color for legend */
+    padding: 0 10px;
+    margin-left: -10px; /* Adjust to sit over the border */
+}
+
+/* Label Styling */
+label {
+    display: block; /* Make labels take their own line */
+    margin-bottom: 8px; /* Space between label and input */
+    font-weight: bold;
+    color: #555; /* Darker grey for labels */
+    font-size: 0.95em;
+}
+
+.optional {
+    font-weight: normal;
+    font-style: italic;
+    color: #888; /* Lighter grey for optional text */
+    font-size: 0.85em; /* Smaller font size for optional text */
+}
+
+/* Input Fields (text, date, select, textarea) */
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: calc(100% - 20px); /* Full width minus padding and border */
+    padding: 10px;
+    margin-bottom: 20px; /* Space after each input */
+    border: 1px solid #bbb; /* Slightly darker border */
+    border-radius: 6px; /* Rounded input corners */
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #333; /* Ensure input text is dark */
+    background-color: #fff; /* White background for inputs */
+}
+
+/* Specific styling for the select dropdown arrow */
+select {
+    -webkit-appearance: none; /* Remove default arrow for Chrome/Safari */
+    -moz-appearance: none; /* Remove default arrow for Firefox */
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%236a1b9a" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Custom SVG arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position arrow to the right */
+    background-size: 20px; /* Size of the arrow */
+    cursor: pointer;
+}
+
+/* Focus styles for inputs */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #6a1b9a; /* Highlight border with purple */
+    box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.2); /* Subtle glow on focus */
+}
+
+/* Rating Options (Radio Buttons) */
+.rating-options {
+    display: flex; /* Arrange radio buttons in a row */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 15px; /* Space between each rating option */
+    margin-bottom: 20px;
+}
+
+.rating-options input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.rating-options label {
+    display: flex; /* Use flex for label content (stars + number) */
+    align-items: center; /* Vertically align stars and number */
+    font-weight: normal;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Pill shape for rating options */
+    background-color: #eee;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.rating-options label span {
+    color: #ccc; /* Default color for stars */
+    margin-right: 5px; /* Space between stars and number */
+    font-size: 1.2em; /* Make stars slightly larger */
+}
+
+/* Style for CHECKED radio buttons */
+.rating-options input[type="radio"]:checked + label {
+    background-color: #6a1b9a; /* Purple background when selected */
+    color: #fff; /* White text when selected */
+    border-color: #6a1b9a;
+}
+
+.rating-options input[type="radio"]:checked + label span {
+    color: gold; /* Yellow stars when selected */
+}
+
+/* Features Checkboxes */
+.features-checkboxes {
+    margin-bottom: 20px;
+}
+
+.checkbox-item {
+    display: flex; /* Arrange checkbox and label in a row */
+    align-items: center; /* Vertically align */
+    margin-bottom: 8px; /* Space between checkbox items */
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: auto; /* Reset width for checkboxes */
+    margin-right: 10px; /* Space between checkbox and its label */
+    margin-bottom: 0; /* Remove extra margin */
+    /* Custom checkbox styling could go here if needed */
+    transform: scale(1.2); /* Make checkbox slightly larger */
+}
+
+.checkbox-item label {
+    font-weight: normal; /* Labels for checkboxes are not bold in the image */
+    margin-bottom: 0; /* Remove default label bottom margin */
+    font-size: 1em;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #6a1b9a; /* Matching purple color */
+    color: #fff;
+    padding: 15px 25px; /* More vertical padding */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1.2em; /* Larger font size for button text */
+    font-weight: bold;
+    width: 100%; /* Full width button */
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px; /* Space above the button */
+}
+
+button[type="submit"]:hover {
+    background-color: #4a148c; /* Darker purple on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Lift effect on hover */
+}
+
+/* Footer Styling */
+footer {
+    margin-top: 40px; /* More space from the form */
+    text-align: center;
+    color: #f0f0f0; /* Light grey text */
+    font-size: 0.85em;
+    line-height: 1.5; /* Better readability */
+}
+
+footer a {
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments (Media Queries) */
+@media (max-width: 768px) {
+    main {
+        padding: 25px 30px; /* Adjust padding for tablets */
+        max-width: 95%; /* Wider on smaller screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Slightly smaller heading */
+    }
+
+    legend {
+        font-size: 1.1em;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    select,
+    textarea {
+        font-size: 0.95em;
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 1.1em;
+    }
+
+    .rating-options {
+        flex-direction: column; /* Stack rating options vertically on small screens */
+        align-items: flex-start; /* Align stacked items to the start */
+        gap: 8px;
+    }
+    .rating-options label {
+        width: 100%; /* Make labels full width when stacked */
+        justify-content: flex-start; /* Align content to the left */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    main {
+        padding: 20px; /* Further reduce padding for very small screens */
+        border-radius: 10px; /* Less rounded corners */
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    fieldset {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    input, select, textarea, button {
+        font-size: 0.9em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
