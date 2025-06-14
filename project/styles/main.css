@@ -1,0 +1,636 @@
+/* General Body and Base Styles */
+:root {
+    /* Define your color variables for easy management */
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #336699; /* Dark Blue */
+    --text-color: #333333; /* Dark Grey */
+    --background-color: #F8F8F8; /* Light Grey */
+    --light-accent-color: #E8F5E9; /* Lighter Green */
+    --dark-background: #1a1a1a; /* Used for footer background, darker than body background */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Body text font */
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Stack header, main, footer vertically */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Headings font */
+    color: var(--secondary-color);
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+/* --- Header Styling --- */
+.site-header {
+    background-color: #fff; /* White background for header */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Space out logo and nav */
+    align-items: center;
+    max-width: 1200px; /* Limit header width */
+    margin: 0 auto; /* Center header content */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--secondary-color); /* Logo text color */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.site-logo {
+    height: 40px; /* Size of your logo image */
+    margin-right: 10px;
+}
+
+/* Hamburger menu (hidden by default on desktop) */
+.hamburger-menu {
+    display: none; /* Hidden on large screens initially */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 100; /* Ensure it's above other elements if needed */
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color); /* Color of the bars */
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu span:last-child {
+    margin-bottom: 0;
+}
+
+/* Navigation menu */
+.main-nav .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display nav items in a row */
+}
+
+.main-nav .nav-list li {
+    margin-left: 25px; /* Space between nav items */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--secondary-color); /* Nav link color */
+    font-weight: 600;
+    font-size: 1.05em;
+    padding: 5px 0;
+    position: relative; /* For underline effect */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color); /* Underline color */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%; /* Expand underline on hover/active */
+}
+
+/* --- Hero Section Styling (basic for now) --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, crop if necessary */
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for text readability */
+    padding: 20px 30px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.hero-text h2 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+
+/* ======== MAIN SECTION STYLING BEGINS HERE ======== */
+/* --- Main Content Area (for lazy loading) --- */
+main {
+    flex-grow: 1; /* Allow main content to grow and push footer down */
+    width: 100%; /* Or set a max-width if needed */
+}
+
+/* General content section styling */
+.content-grid {
+    max-width: 1200px;
+    margin: 40px auto; /* Vertical space between sections, horizontally centered */
+    padding: 0 20px; /* Horizontal padding for smaller screens */
+    text-align: center; /* Center headings and buttons within sections */
+}
+
+.content-grid h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px; /* Space below section headings */
+    color: var(--secondary-color); /* Dark blue for main section headings */
+}
+
+/* --- Value Proposition Section --- */
+.value-proposition-section {
+    background-color: var(--light-accent-color); /* Lighter green background */
+    padding: 60px 20px;
+    margin-top: 0; /* No top margin as hero is right above it */
+}
+
+.value-proposition-section h2 {
+    color: var(--secondary-color);
+}
+
+.promise-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for cards */
+    gap: 25px; /* Space between cards */
+    margin-top: 30px;
+}
+
+.promise-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promise-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.promise-card .card-icon {
+    height: 60px; /* Size of your icon images */
+    margin-bottom: 15px;
+}
+
+.promise-card h3 {
+    font-size: 1.3em;
+    color: var(--primary-color); /* Green for promise card headings */
+    margin-bottom: 10px;
+}
+
+.promise-card p {
+    font-size: 0.95em;
+    color: var(--text-color);
+}
+
+/* --- Featured Encounters Section --- */
+.featured-encounters-section {
+    background-color: var(--background-color); /* Light grey background */
+    padding: 60px 20px;
+}
+
+.encounter-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid for encounter cards */
+    gap: 30px; /* Space between encounter cards */
+    margin-top: 30px;
+}
+
+.encounter-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Ensures image corners are rounded */
+    text-align: left; /* Align text within card to left */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.encounter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.encounter-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent image size */
+    object-fit: cover; /* Cover and crop image */
+    display: block; /* Remove extra space below image */
+}
+
+.encounter-card h3 {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    margin: 15px 20px 10px;
+}
+
+.encounter-card p {
+    font-size: 0.9em;
+    color: var(--text-color);
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+
+.encounter-card .card-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 20px 15px;
+    transition: color 0.3s ease;
+}
+
+.encounter-card .card-link:hover {
+    color: #388e3c; /* Darker green on hover */
+    text-decoration: underline;
+}
+
+.secondary-cta {
+    margin-top: 40px; /* Space above the button */
+    background-color: var(--secondary-color); /* Dark blue for secondary CTA */
+    color: #fff;
+}
+
+.secondary-cta:hover {
+    background-color: #2b5680; /* Darker blue on hover */
+}
+
+/* --- Testimonials Section --- */
+.testimonials-section {
+    background-color: #fff; /* White background */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonial-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--light-accent-color); /* Lighter green accent for cards */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push author to bottom if quote is short */
+}
+
+.testimonial-card blockquote {
+    font-style: italic;
+    font-size: 1em;
+    color: var(--text-color);
+    margin: 0 0 15px;
+    padding: 0;
+    border-left: 4px solid var(--primary-color); /* Green accent bar */
+    padding-left: 15px;
+}
+
+.testimonial-card .author {
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    text-align: right; /* Align author to the right */
+    margin-top: auto; /* Push to bottom if flex column */
+}
+
+/* --- Final Call to Action Section --- */
+.final-cta-section {
+    background-color: var(--secondary-color); /* Dark blue background */
+    color: #fff; /* White text */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.final-cta-section h2 {
+    color: #fff; /* White heading */
+    margin-bottom: 15px;
+}
+
+.final-cta-section p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 30px; /* Center paragraph below heading */
+}
+
+/* Adjust CTA button color for dark background */
+.final-cta-section .cta-button {
+    background-color: var(--primary-color); /* Green CTA button */
+}
+
+.final-cta-section .cta-button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* ======== MAIN SECTION STYLING ENDS HERE ======== */
+
+
+/* --- Footer Styling --- */
+.site-footer {
+    background-color: var(--dark-background); /* Dark background for footer */
+    color: #f0f0f0; /* Light text color for footer */
+    padding: 30px 20px 15px; /* Adjust padding */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 40px; /* Space above footer */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separator line */
+}
+
+.footer-section {
+    flex: 1 1 200px; /* Grow, shrink, and base width */
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.footer-branding .logo-link-footer {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+.site-logo-footer {
+    height: 35px;
+    margin-right: 8px;
+}
+
+.footer-branding .tagline {
+    font-size: 0.9em;
+    color: #bbb;
+}
+
+.footer-nav h3,
+.footer-social h3,
+.footer-contact h3 {
+    color: #fff; /* White headings for footer sections */
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 8px;
+}
+
+.footer-nav a,
+.footer-contact p {
+    color: #bbb; /* Lighter grey for footer links/text */
+    text-decoration: none;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--primary-color); /* Green highlight on hover */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons img {
+    height: 28px; /* Size of social icons */
+    width: 28px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 0.85em;
+    color: #bbb;
+}
+
+/* --- Responsive Adjustments (Media Queries) --- */
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 10px 15px;
+    }
+
+    .logo-link {
+        font-size: 1.3em;
+    }
+
+    .site-logo {
+        height: 35px;
+    }
+
+    /* Show hamburger menu, hide desktop nav */
+    .hamburger-menu {
+        display: block;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 0; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: #fff; /* Same as header or different */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack nav items vertically */
+        z-index: 99; /* Ensure it's above main content */
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .main-nav.active { /* Class added by JS when menu is open */
+        display: flex;
+    }
+
+    .main-nav .nav-list {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-nav .nav-list li {
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 12px 20px;
+        color: var(--text-color); /* Darker text for mobile nav */
+        border-bottom: 1px solid #eee; /* Separator lines */
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link::after { /* Remove underline effect for mobile nav */
+        display: none;
+    }
+
+    /* Hero section adjustments */
+    .hero-section {
+        height: 300px;
+    }
+
+    .hero-text h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    /* Footer adjustments */
+    .site-footer {
+        padding: 20px 15px;
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack footer sections vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        width: 100%; /* Full width for stacked sections */
+        margin-bottom: 25px;
+        padding: 0;
+    }
+
+    .footer-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .social-icons {
+        justify-content: center; /* Center social icons */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-link {
+        font-size: 1.1em;
+    }
+
+    .site-logo {
+        height: 30px;
+    }
+
+    .hero-section {
+        height: 250px;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5em;
+    }
+
+    .hero-text p {
+        font-size: 0.9em;
+    }
+
+    .cta-button {
+        padding: 8px 15px;
+    }
+
+    .footer-branding .logo-link-footer {
+        font-size: 1.1em;
+    }
+    .site-logo-footer {
+        height: 30px;
+    }
+}
