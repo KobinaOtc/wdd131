@@ -1,0 +1,227 @@
+/* ======== PACKAGES PAGE SPECIFIC STYLING BEGINS HERE ======== */
+
+/* Packages Hero Section */
+.packages-hero-section {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: var(--primary-color); /* Fallback background */
+}
+
+.packages-hero-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.packages-hero-text {
+    position: relative;
+    z-index: 2;
+    padding: 20px 30px;
+    max-width: 800px;
+}
+
+.packages-hero-text h2 {
+    font-size: 2.8em;
+    color: #fff;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.packages-hero-text p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Filters Section */
+.filters-section {
+    padding: 40px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    text-align: center; /* Center filter buttons */
+}
+
+.filters-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 15px; /* Space between buttons */
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background-color: #eee; /* Light grey default */
+    color: var(--text-color);
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 25px; /* Rounded pill shape */
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--light-accent-color);
+    border-color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color); /* Primary color when active */
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Packages List Section (Grid for the packages) */
+.packages-list-section {
+    padding: 60px 20px;
+    background-color: var(--background-color); /* Light grey page background */
+}
+
+.packages-list-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+}
+
+.packages-grid {
+    display: grid;
+    /* Responsive grid: minimum 300px wide cards, as many as fit */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Space between package cards */
+}
+
+/* Individual Package Card Styling (similar to landing page encounter cards) */
+.package-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Use flexbox for internal layout if needed */
+    flex-direction: column; /* Stack image, text, button */
+    justify-content: space-between; /* Push button to bottom */
+}
+
+.package-card.hidden {
+    display: none; /* Used by JS for filtering */
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.package-card img {
+    width: 100%;
+    height: 220px; /* Consistent height for all package images */
+    object-fit: cover;
+    display: block;
+}
+
+.package-card-content {
+    padding: 15px 20px 20px; /* Padding for text inside the card */
+    flex-grow: 1; /* Allow content to take available space */
+}
+
+.package-card h3 {
+    font-size: 1.3em;
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.package-card p {
+    font-size: 0.95em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.package-card .book-now-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 20px 15px; /* Margin from bottom and sides */
+    align-self: flex-start; /* Align button to start if card is flex */
+    transition: background-color 0.3s ease;
+}
+
+.package-card .book-now-btn:hover {
+    background-color: #388e3c;
+}
+
+/* Responsive Adjustments for Packages Page */
+@media (max-width: 768px) {
+    .packages-hero-text h2 {
+        font-size: 2em;
+    }
+    .packages-hero-text p {
+        font-size: 1em;
+    }
+
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .packages-grid {
+        gap: 20px;
+    }
+
+    .package-card {
+        text-align: center; /* Center content on smaller screens if desired */
+    }
+
+    .package-card-content {
+        padding: 15px;
+    }
+
+    .package-card .book-now-btn {
+        margin: 0 auto 15px; /* Center button on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .packages-hero-section {
+        height: 280px;
+    }
+    .packages-hero-text h2 {
+        font-size: 1.6em;
+    }
+    .packages-hero-text p {
+        font-size: 0.9em;
+    }
+
+    .filters-section,
+    .packages-list-section {
+        padding: 30px 15px;
+    }
+
+    .packages-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+}
+
+/* ======== PACKAGES PAGE SPECIFIC STYLING ENDS HERE ======== */
