@@ -115,6 +115,7 @@ const temples = [
             <p>Location: ${temple.location}</p>
             <p>Dedicated: ${temple.dedicated}</p>
             <p>Area: ${temple.area.toLocaleString()} sq ft</p>
+            <a href="${temple.imageUrl}">Click here</a>
         `;
         templeListElement.appendChild(templeCard);
     });
