@@ -1,0 +1,286 @@
+/* ======== CONTACT PAGE SPECIFIC STYLING BEGINS HERE ======== */
+
+/* Contact Hero Section */
+.contact-hero-section {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: var(--primary-color); /* Fallback background */
+}
+
+.contact-hero-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.7; /* Slightly more opaque overlay */
+}
+
+.contact-hero-text {
+    position: relative;
+    z-index: 2;
+    padding: 20px 30px;
+    max-width: 800px;
+}
+
+.contact-hero-text h2 {
+    font-size: 2.8em;
+    color: #fff;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.contact-hero-text p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Contact Content Section - Grid for Info + Form */
+.contact-content-section {
+    padding: 60px 20px;
+    background-color: var(--background-color); /* Light grey background */
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 40px; /* Space between info and form */
+    align-items: start; /* Align items to the top */
+    text-align: left; /* Default text alignment */
+}
+
+/* Contact Info Section */
+.contact-info {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info h2 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.contact-info .info-item {
+    margin-bottom: 20px;
+}
+
+.contact-info .info-item h3 {
+    font-size: 1.2em;
+    color: var(--primary-color); /* Green for info item headings */
+    margin-bottom: 5px;
+}
+
+.contact-info .info-item a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info .info-item a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form Container */
+.contact-form-container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-container h2 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Contact Form Styling (reusing existing form styles) */
+.contact-form fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: #fcfcfc;
+}
+
+.contact-form legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 10px;
+    margin-left: -10px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #333;
+    background-color: #fff;
+}
+
+.contact-form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%236a1b9a" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.contact-form .checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-form .checkbox-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    margin-bottom: 0;
+    transform: scale(1.2);
+}
+
+.contact-form .checkbox-item label {
+    font-weight: normal;
+    margin-bottom: 0;
+    font-size: 0.95em;
+}
+
+/* Submit Button */
+.contact-form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #388e3c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Confirmation Message (reusing booking page class) */
+.confirmation-message {
+    background-color: var(--light-accent-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.confirmation-message.hidden {
+    display: none;
+}
+
+/* Responsive Adjustments for Contact Page */
+@media (min-width: 768px) {
+    .contact-content-section {
+        grid-template-columns: 1fr 2fr; /* Info on left, form on right */
+        text-align: left; /* Align info text to left */
+    }
+
+    .contact-info {
+        order: 1;
+    }
+
+    .contact-form-container {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero-text h2 {
+        font-size: 2em;
+    }
+    .contact-hero-text p {
+        font-size: 1em;
+    }
+    .contact-content-section {
+        padding: 40px 15px;
+    }
+    .contact-info h2, .contact-form-container h2 {
+        font-size: 1.5em;
+        text-align: center; /* Center headings on mobile */
+    }
+    .contact-info {
+        padding: 25px;
+    }
+    .contact-form-container {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-hero-section {
+        height: 280px;
+    }
+    .contact-hero-text h2 {
+        font-size: 1.6em;
+    }
+    .contact-hero-text p {
+        font-size: 0.9em;
+    }
+    .contact-info {
+        text-align: center; /* Center contact info on very small screens */
+    }
+    .contact-info .info-item {
+        text-align: center;
+    }
+}
+
+/* ======== CONTACT PAGE SPECIFIC STYLING ENDS HERE ======== */

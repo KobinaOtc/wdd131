@@ -1,0 +1,224 @@
+/* About Hero Section */
+.about-hero-section {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Slightly shorter hero than landing page */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-color: var(--secondary-color); /* Fallback background */
+}
+
+.about-hero-section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.8; /* Slightly darker overlay for text readability */
+}
+
+.about-hero-text {
+    position: relative;
+    z-index: 2;
+    padding: 20px 30px;
+    max-width: 800px;
+}
+
+.about-hero-text h2 {
+    font-size: 2.8em;
+    color: #fff;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Mission/Vision Section - Layout for text + image */
+.mission-vision-section {
+    background-color: var(--background-color); /* Light grey background */
+    padding: 60px 20px;
+    display: grid; /* Use grid for layout */
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 40px; /* Space between text and image */
+    align-items: center; /* Vertically align items */
+}
+
+.mission-vision-section .section-text h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--primary-color); /* Green for sub-headings */
+}
+
+.mission-vision-section .section-text p {
+    font-size: 1.05em;
+    line-height: 1.8;
+}
+
+.mission-vision-section .section-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Limit image height */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Core Values Section - Grid of cards */
+.values-section {
+    background-color: #fff; /* White background */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.values-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.value-card {
+    background-color: var(--light-accent-color); /* Lighter green accent */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.value-card .card-icon {
+    height: 70px; /* Larger icons for values */
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-size: 1.4em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    font-size: 0.95em;
+    color: var(--text-color);
+}
+
+/* Team CTA Section */
+.team-cta-section {
+    background-color: var(--secondary-color); /* Dark blue background */
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.team-cta-section h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.team-cta-section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.team-cta-section .cta-button {
+    background-color: var(--primary-color); /* Green button */
+    color: #fff;
+}
+
+.team-cta-section .cta-button:hover {
+    background-color: #388e3c; /* Darker green hover */
+}
+
+/* ======== ABOUT PAGE SPECIFIC STYLING ENDS HERE ======== */
+
+/* --- Responsive Adjustments (Media Queries for About Page) --- */
+@media (min-width: 768px) {
+    /* For tablets and larger, arrange mission-vision-section into two columns */
+    .mission-vision-section {
+        grid-template-columns: 1fr 1fr; /* Two columns for text and image */
+        text-align: left; /* Align text to left in its column */
+    }
+
+    .mission-vision-section.reversed { /* Optional: for alternating image/text */
+        grid-template-areas: "image text";
+    }
+    .mission-vision-section.reversed .section-text {
+        grid-area: text;
+    }
+    .mission-vision-section.reversed .section-image {
+        grid-area: image;
+    }
+
+    .mission-vision-section .section-image {
+        order: 1; /* Default order, image comes after text on mobile */
+    }
+    .mission-vision-section .section-text {
+        order: 2; /* Default order, text comes after image on mobile */
+    }
+
+    /* For non-reversed layout, ensure image is on right */
+    .mission-vision-section .section-image:nth-child(even) { /* Or use specific classes for left/right */
+        order: 2;
+    }
+    .mission-vision-section .section-text:nth-child(odd) {
+        order: 1;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .about-hero-text h2 {
+        font-size: 2em;
+    }
+
+    .mission-vision-section .section-text h3 {
+        font-size: 1.5em;
+    }
+
+    .value-card h3 {
+        font-size: 1.2em;
+    }
+
+    .team-cta-section h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero-section {
+        height: 250px;
+    }
+    .about-hero-text h2 {
+        font-size: 1.5em;
+    }
+
+    .mission-vision-section {
+        padding: 40px 15px;
+    }
+
+    .values-section, .team-cta-section {
+        padding: 40px 15px;
+    }
+
+    .value-card {
+        padding: 20px;
+    }
+
+    .value-card .card-icon {
+        height: 50px;
+    }
+}
