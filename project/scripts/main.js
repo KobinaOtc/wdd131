@@ -64,29 +64,4 @@ document.addEventListener('DOMContentLoaded', () => {
     lazyLoadImages.forEach(img => {
         imgObserver.observe(img);
     });
-
-    // --- Placeholder for potential lazy loading (Example: to be implemented later) ---
-    // const lazyLoadElements = document.querySelectorAll('[data-src]');
-    // const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             const target = entry.target;
-    //             // Example: Load content for a placeholder div
-    //             if (target.dataset.src) {
-    //                 fetch(target.dataset.src)
-    //                     .then(response => response.text())
-    //                     .then(html => {
-    //                         target.innerHTML = html;
-    //                         target.removeAttribute('data-src'); // Prevent re-loading
-    //                     })
-    //                     .catch(error => console.error('Error loading content:', error));
-    //             }
-    //             observer.unobserve(target);
-    //         }
-    //     });
-    // });
-
-    // lazyLoadElements.forEach(element => {
-    //     lazyLoadObserver.observe(element);
-    // });
 });

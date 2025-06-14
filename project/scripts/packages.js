@@ -82,35 +82,6 @@ function filterPackages(selectedCategory) {
 // or put it directly in packages.js
 
 
-// TO D0: Fix lazy loading to stop Image breaking
-// function applyLazyLoading() {
-//     const lazyLoadImages = document.querySelectorAll('img[data-src]');
-//     const imgObserverOptions = {
-//         root: null,
-//         rootMargin: '0px',
-//         threshold: 0.1
-//     };
-
-//     const imgObserverCallback = (entries, observer) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 const img = entry.target;
-//                 img.src = img.dataset.src;
-//                 img.removeAttribute('data-src');
-//                 img.classList.add('loaded'); // Add a class when loaded for potential fade-in CSS
-//                 observer.unobserve(img);
-//             }
-//         });
-//     };
-
-//     const imgObserver = new IntersectionObserver(imgObserverCallback, imgObserverOptions);
-
-//     lazyLoadImages.forEach(img => {
-//         imgObserver.observe(img);
-//     });
-// }
-
-
 // --- Main Execution on Packages Page Load ---
 document.addEventListener('DOMContentLoaded', () => {
     generateFilterButtons(); // Create filter buttons first
