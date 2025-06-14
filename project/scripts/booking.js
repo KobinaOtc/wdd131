@@ -99,11 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
         packageSelect.value = ""; // Reset dropdown to default
         packageSelect.dispatchEvent(new Event('change')); // Trigger change to reset summary properly
 
-        // You might store successful booking count in localStorage here if needed for analytics
-        // Example:
-        // let successfulBookings = localStorage.getItem('successfulBookings') || 0;
-        // successfulBookings = parseInt(successfulBookings) + 1;
-        // localStorage.setItem('successfulBookings', successfulBookings);
 
         // Optionally scroll to confirmation message
         confirmationMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });

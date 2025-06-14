@@ -36,28 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Optionally scroll to confirmation message for better UX
             confirmationMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // In a real application, you would send this data to a server here (e.g., using fetch API)
-            // fetch('/api/contact', {
-            //     method: 'POST',
-            //     body: JSON.stringify(messageDetails),
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     }
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log('Success:', data);
-            //     confirmationMessage.textContent = 'Thank you for your message! We will get back to you shortly.';
-            //     confirmationMessage.classList.remove('hidden');
-            //     contactForm.reset();
-            // })
-            // .catch((error) => {
-            //     console.error('Error:', error);
-            //     confirmationMessage.textContent = 'There was an error sending your message. Please try again.';
-            //     confirmationMessage.style.backgroundColor = 'var(--red-color)'; // Example error styling
-            //     confirmationMessage.classList.remove('hidden');
-            // });
         });
     }
 });
